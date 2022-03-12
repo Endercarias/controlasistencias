@@ -6,6 +6,7 @@ module.exports = {
         getallTrabajo: `select 
         t.uuid,
         t.descripcion as trabajodescripcion,
+        t.SueldoFijo,
         e.primerNombre,
         e.segundoNombre,
         e.primerApellido,
@@ -13,7 +14,7 @@ module.exports = {
         a.descripcion as areaDescripcion
       from dbo.Trabajo t
       inner join dbo.empleado e on e.uuid = t.uuidEmpleado
-      inner join dbo.AreaTrabajo a on a.uuid = t.[uuidAreaTrabajo]`,
+      inner join dbo.AreaTrabajo a on a.uuid = t.uuidAreaTrabajo`,
         getallActividades: `select 
         ac.uuid,
         t.descripcion,
